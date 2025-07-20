@@ -88,13 +88,23 @@ export default function Home() {
               className="flex flex-col justify-center gap-4 sm:flex-row"
               variants={fadeInUp}
             >
+              <a href="https://docs.google.com/forms/d/1WXldjZu_roUjS6uHy-Htx9DKQRqaLwmEH4rrKlhbI5M/viewform?pli=1&pli=1&edit_requested=true">
               <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 text-lg font-semibold">
                 Apply for Internship
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" size="lg" className="px-8 py-4 text-lg font-semibold">
-                Explore Services
-              </Button>
+              </a>
+              <Button
+  variant="outline"
+  size="lg"
+  className="px-8 py-4 text-lg font-semibold"
+  onClick={() => {
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+  }}
+>
+  Explore Services
+</Button>
+
             </motion.div>
           </motion.div>
         </div>
@@ -312,14 +322,14 @@ export default function Home() {
           
           {/* Internship Programs */}
           <motion.div 
-            className=""
+            id="internships" 
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={staggerContainer}
           >
             <motion.h4 
-              className="mb-12 text-2xl font-bold text-center text-gray-900"
+              className="mb-12 text-2xl font-bold text-center text-gray-900 "
               variants={fadeInUp}
             >
               Virtual Internship Programs for Students
@@ -594,7 +604,7 @@ export default function Home() {
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-2xl blur-xl"></div>
                     <div className="relative bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">🚀 What You'll Build</h4>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">🚀 What You&#39;ll Build</h4>
                       <ul className="space-y-2 text-sm text-gray-700">
                         <li>• Full-stack web applications</li>
                         <li>• Mobile apps for real clients</li>
@@ -985,10 +995,17 @@ export default function Home() {
               Join thousands of students who have accelerated their careers with SyncWithDev. Start your journey today!
             </motion.p>
             <motion.div variants={fadeInUp}>
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-                Join Batch Now
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <a
+  href="https://docs.google.com/forms/d/1WXldjZu_roUjS6uHy-Htx9DKQRqaLwmEH4rrKlhbI5M/viewform?pli=1&edit_requested=true"
+  
+  rel="noopener noreferrer"
+>
+  <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
+    Join Batch Now
+    <ArrowRight className="ml-2 h-5 w-5" />
+  </Button>
+</a>
+
             </motion.div>
           </motion.div>
         </div>
@@ -1069,34 +1086,53 @@ export default function Home() {
                 Empowering students through virtual internships, real projects, and career growth opportunities.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Instagram className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Linkedin className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <a
+  href="https://www.instagram.com/syncwithdev/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-gray-400 hover:text-white transition-colors"
+>
+  <Instagram className="h-6 w-6" />
+</a>
+
+               <a
+  href="https://www.linkedin.com/company/syncwithdev/?viewAsMember=true"
+  className="text-gray-400 hover:text-white transition-colors"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Visit our LinkedIn page"
+>
+  <Linkedin className="h-6 w-6" />
+</a>
+
+                {/* <a href="https://www.linkedin.com/company/syncwithdev/about/?viewAsMember=true" className="text-gray-400 hover:text-white transition-colors">
                   <MessageCircle className="h-6 w-6" />
-                </a>
+                </a> */}
               </div>
             </div>
             
             <div>
               <h5 className="mb-4 text-lg font-semibold text-white">Quick Links</h5>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Apply for Internship</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Our Services</a></li>
+                <li><a href="https://docs.google.com/forms/d/1WXldjZu_roUjS6uHy-Htx9DKQRqaLwmEH4rrKlhbI5M/viewform?pli=1&pli=1&edit_requested=true" className="hover:text-white transition-colors">Apply for Internship</a></li>
+                <li><a href="#services" className="hover:text-white transition-colors">Our Services</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Success Stories</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Community</a></li>
+                <li><a href="https://t.me/+bFCmpoeMMMZjOTE1" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Community</a></li>
               </ul>
             </div>
             
             <div>
               <h5 className="mb-4 text-lg font-semibold text-white">Contact</h5>
-              <div className="flex items-center text-gray-400">
-                <Mail className="mr-2 h-4 w-4" />
-                <span>hello@syncwithdev.com</span>
-              </div>
+             <div className="flex items-center text-gray-400">
+  <Mail className="mr-2 h-4 w-4" />
+  <a
+    href="mailto:officialsyncwithdev@gmail.com"
+    className="hover:underline"
+  >
+    officialsyncwithdev@gmail.com
+  </a>
+</div>
+
             </div>
           </div>
           

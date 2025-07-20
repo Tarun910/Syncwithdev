@@ -87,18 +87,21 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <motion.div
-            className="hidden md:block"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <Button 
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-              onClick={() => scrollToSection("#internships")}
-            >
-              Apply Now
-            </Button>
-          </motion.div>
+  className="hidden md:block"
+  initial={{ opacity: 0, x: 20 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6, delay: 0.8 }}
+>
+  <a
+    href="https://docs.google.com/forms/d/1WXldjZu_roUjS6uHy-Htx9DKQRqaLwmEH4rrKlhbI5M/viewform?pli=1&pli=1&edit_requested=true"
+    // remove this if you want it to open in the same tab
+    rel="noopener noreferrer"
+    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 inline-block"
+  >
+    Apply Now
+  </a>
+</motion.div>
+
 
           {/* Mobile Menu Button */}
           <motion.button
